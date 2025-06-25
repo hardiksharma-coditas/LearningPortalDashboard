@@ -1,0 +1,7 @@
+<div class="studentsContainer">
+    <div class="studentBoard">
+        @for(student of students;track $index){
+            <app-user-card [name]="student.name" [email]="student.email" [role]="student.role"></app-user-card>
+        }
+    </div>
+</div>

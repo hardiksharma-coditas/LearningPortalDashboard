@@ -1,0 +1,15 @@
+<div class="courseCardContainer">
+    <div class="image">
+        <img src="https://foundr.com/wp-content/uploads/2023/04/How-to-create-an-online-course.jpg" alt="">
+    </div>
+    <div class="info">
+        <div>
+        <h4>{{name()}}</h4>
+        <p>By - {{instructor()}}</p>
+         <p class="paid">{{type()}}</p>
+            <p [class]="type()=='paid'?'':'hide'">Cost: {{cost()}}</p>
+        <p>Duration : {{duration()}}</p>
+        </div>
+        <app-custom-button label="Purchase" />
+    </div>
+</div>

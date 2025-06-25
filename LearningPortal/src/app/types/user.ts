@@ -5,5 +5,17 @@ export interface User{
     email:string,
     password:string|number,
     role:'admin'|'student'|'instructor',
-    token:string
+    token:string,
+    status:'active'|'left'
+}
+
+export interface Users{
+   
+  first: string,
+  prev: null|string,
+  next: null|string,
+  last:  string,
+  pages: string,
+  items: string,
+  data: User[]
 }

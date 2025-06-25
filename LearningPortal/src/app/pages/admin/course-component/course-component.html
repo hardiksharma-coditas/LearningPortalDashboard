@@ -1,0 +1,43 @@
+<div class="courseContainer">
+    <!-- <app-course-card name="Jhinga" cost="200" [duration]="2+' weeks'" instructor="Khan sir" type="paid"></app-course-card> -->
+
+    <div class="courseBoard">
+    @for(course of courses;track $index){
+        <app-course-card [name]="course.name" [cost]="course.cost" [duration]="course.duration +' weeks'" [instructor]="course.instructor" [type]="course.type"/>
+    }
+
+    @if(showModal){
+    <app-modal (close)="closeModal()">
+        <app-add-course></app-add-course>
+    </app-modal>
+    }
+
+    <button class="addBtn" (click)="openModal()" >+</button>
+    </div>
+    <div class="taskbar">
+     
+        <div class="pagination">
+            <button (click)="moveLeft()"><</button>
+             {{page}}
+            <button (click)="moveRight()">></button>
+        </div>
+
+        <select (change)="setLimit($event)">
+            <option value="5">5</option>
+            <option value="10">10</option>
+            <option value="15">15</option>
+        </select>
+        
+        <select (change)="setFilter($event)" >
+             <option value="course">Course</option>
+            <option value="instructor">Instructor</option>
+        </select>
+
+        <div class="searchbar">
+            <input type="text" (change)="search($event)" [formControl]="searchElement">
+            <button>
+                <img src="https://img.icons8.com/ios7/600/search.png" alt="">
+            </button>
+        </div>
+    </div>
+</div>

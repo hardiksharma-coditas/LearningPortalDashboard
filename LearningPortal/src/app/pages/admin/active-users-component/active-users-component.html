@@ -1,0 +1,38 @@
+<div class="activeUsersContainer">
+
+    <div class="activeUserBoard">
+   <!-- <app-user-card name="Hardik" email="hardik" role="admin"></app-user-card> -->
+
+   @for(user of activeusers;track $index){
+   <app-user-card [name]="user.name" [email]="user.email" [role]="user.role"></app-user-card>
+   }
+    </div>
+
+     <div class="taskbar">
+     
+        <div class="pagination">
+            <button (click)="moveLeft()"><</button>
+             {{page}}
+            <button (click)="moveRight()">></button>
+        </div>
+
+        <select (change)="setLimit($event)">
+            <option value="5">5</option>
+            <option value="10">10</option>
+            <option value="15">15</option>
+        </select>
+        
+        <select (change)="setFilter($event)" >
+             <option value="course">Student</option>
+            <option value="instructor">Instructor</option>
+        </select>
+
+        <div class="searchbar">
+            <input type="text" (change)="search($event)" [formControl]="searchElement">
+            <button>
+                <img src="https://img.icons8.com/ios7/600/search.png" alt="">
+            </button>
+        </div>
+    </div>
+    
+</div>

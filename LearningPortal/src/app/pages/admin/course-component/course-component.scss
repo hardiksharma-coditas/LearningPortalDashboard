@@ -1,0 +1,60 @@
+.courseContainer {
+    width: 100%;
+
+    .courseBoard {
+        padding: 1rem;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 10px;
+        min-height: 80vh;
+        position: relative;
+
+        .addBtn{
+            position: absolute;
+            bottom: 5%;
+            right: 2%;
+            height: 40px;
+            width: 40px;
+            border-radius: 50%;
+            background: none;
+            transition: 0.5s;
+            font-size: 25px;
+
+            &:hover{
+                background-color: black;
+                color: white;
+            }
+        }
+    }
+
+    .taskbar {
+
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+        padding: 1rem;
+        border-top: thin solid black;
+
+
+        .pagination {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 5px;
+
+        }
+
+        .searchbar {
+
+            img {
+                width: 10px;
+            }
+        }
+
+        button {
+            width: 20px;
+        }
+    }
+
+}

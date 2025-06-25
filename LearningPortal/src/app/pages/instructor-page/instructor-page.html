@@ -1,1 +1,13 @@
-<p>instructor-page works!</p>
+<div class="instructorPageContainer">
+    <app-header></app-header>
+     <main>
+        <nav>
+            <p routerLink="courses" routerLinkActive="active">Courses</p>
+            <p routerLink="students" routerLinkActive="active">Students</p>
+            <p routerLink="ratings" routerLinkActive="active">Ratings</p>
+        </nav> 
+        <div class="outlet">
+            <router-outlet></router-outlet>
+        </div>
+     </main>
+</div>

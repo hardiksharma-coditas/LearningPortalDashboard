@@ -1,0 +1,48 @@
+.courseCardContainer{
+    min-height: 310px;
+    // width: 250px;
+    padding: 5px;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    border: thin solid black;
+
+    .image{
+        img{
+            height: 150px;
+            width: 100%;
+        }
+    }
+
+    .info{
+      
+        padding: 2px;
+        div{
+        display: grid;
+        grid-template-columns: auto auto;
+
+        h4{
+            margin: 5px;
+        }
+        p{
+            margin: 5px;
+        }
+        .paid{
+            border:thin solid goldenrod;
+            border-radius: 10px;
+            width: 50px;
+            text-align: center;
+            color: goldenrod;
+            padding: 2px;
+        }
+        .hide{
+            display: none;
+        }
+        }
+    }
+
+    &:hover{
+        box-shadow: 0px 0px 6px 2px grey;
+    }
+
+}

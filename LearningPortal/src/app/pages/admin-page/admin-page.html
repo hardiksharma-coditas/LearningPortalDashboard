@@ -1,1 +1,13 @@
-<p>admin-page works!</p>
+<div class="adminContainer">
+    <app-header></app-header>
+     <main>
+        <nav>
+            <p routerLink="courses" routerLinkActive="active">Courses</p>
+            <p routerLink="activeusers" routerLinkActive="active">Active Users</p>
+            <p routerLink="stats" routerLinkActive="active">Stats</p>
+        </nav> 
+        <div class="outlet">
+            <router-outlet></router-outlet>
+        </div>
+     </main>
+</div>

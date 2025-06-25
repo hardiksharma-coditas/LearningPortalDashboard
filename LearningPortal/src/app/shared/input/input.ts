@@ -16,7 +16,7 @@ import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 })
 export class InputComponent implements ControlValueAccessor{
  
-  type=input.required<'text'|'email'|'password'>()
+  type=input.required<'text'|'email'|'password'|'radio'>()
   placeholder=input('')
   _value=signal('')
 

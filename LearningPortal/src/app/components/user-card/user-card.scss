@@ -1,0 +1,26 @@
+.userCard{
+    min-height: 180px;
+    display: flex;
+    flex-direction: column;
+    border: thin solid black;
+    padding: 2px;
+    border-radius: 5px;
+
+    .image{
+        img{
+            height: 100px;
+            width: 100%;
+        }
+    }
+
+    .info{
+        display: flex;
+        flex-direction: column;
+        // background-color: aqua;
+        margin: 5px;
+    }
+
+    &:hover{
+        box-shadow: 0px 0px 6px 2px grey;
+    }
+}

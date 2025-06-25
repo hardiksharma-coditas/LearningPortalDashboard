@@ -1,0 +1,22 @@
+.headerContainer{
+    min-height: 10vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem;
+    border-bottom: thin solid black;
+
+    .profile{
+      
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        
+        img{
+            height: 50px;
+            width: 50px;
+            margin: 2px;
+        }
+    }
+}

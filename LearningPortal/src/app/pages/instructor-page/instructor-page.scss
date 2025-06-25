@@ -1,0 +1,29 @@
+.instructorPageContainer{
+min-height: 100vh;
+
+main{
+ display: flex;
+
+ nav{
+    min-height: 90vh;
+    width: 150px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-right: thin solid black;
+
+    p{
+        padding: 1rem 1.5rem;
+        margin: 5px;
+        width: 100%;
+    }
+
+    .active{
+        border: 2px solid black;
+        border-radius: 10px;
+    }
+ }
+
+}
+}
