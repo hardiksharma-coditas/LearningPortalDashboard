@@ -1,0 +1,7 @@
+<div class="toastContainer">
+    @for(toast of toasts;track $index){
+        <div [class]="toast.type">
+         {{toast.message}}
+        </div>
+    }
+</div>

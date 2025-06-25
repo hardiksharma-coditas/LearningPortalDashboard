@@ -1,0 +1,19 @@
+<div class="loginContainer">
+   <form action="" [formGroup]="loginForm" (ngSubmit)="onLogin()">
+    <h3>Login Page</h3>
+    <div>
+        <label for="email">Email :</label>
+        <app-input class="input" type="email" placeholder="Johndoe@gmail.com" formControlName="email"/>
+        <p class="error">{{validateForm('email')}}</p>
+    </div>
+    <div>
+        <label for="password">Password :</label>
+        <app-input class="input" type="password" formControlName="password" />
+        <p class="error">{{validateForm('password')}}</p>
+    </div>
+    <div>
+     <app-custom-button class="button" label="Login"/>
+    </div>
+   
+   </form>
+</div>

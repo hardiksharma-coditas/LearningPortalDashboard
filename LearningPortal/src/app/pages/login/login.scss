@@ -1,0 +1,30 @@
+.loginContainer{
+    min-height: 100vh;
+    display: grid;
+    place-items: center;
+
+    form{
+        border: 2px solid black;
+        border-radius: 5px;
+
+        h3{
+            display: grid;
+            place-items: center;
+            border-bottom: thin solid black;
+            background-color: aquamarine;
+            padding: 1rem;
+        }
+
+        div{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: start;
+            margin: 1rem;
+           
+           .error{
+            color: red;
+           }
+        }
+    }
+}
