@@ -1,0 +1,24 @@
+.headerContainer {
+  min-height: 10vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem;
+  border-bottom: thin solid black;
+  position: relative;
+}
+.headerContainer .profile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.headerContainer .profile img {
+  height: 50px;
+  width: 50px;
+  margin: 2px;
+}
+
+.header {
+  min-height: 15vh;
+}/*# sourceMappingURL=header.css.map */

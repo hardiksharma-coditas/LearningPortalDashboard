@@ -1,0 +1,14 @@
+.courseCard .object-fit-cover {
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.courseCard img {
+  height: 100%;
+  width: 100%;
+}
+.courseCard:hover {
+  box-shadow: 0px 0px 6px 2px grey !important;
+}
+.courseCard .hide {
+  display: none;
+}/*# sourceMappingURL=course-card.css.map */

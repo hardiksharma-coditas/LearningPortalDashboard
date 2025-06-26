@@ -3,7 +3,7 @@
 
     <div class="courseBoard">
     @for(course of courses;track $index){
-        <app-course-card [name]="course.name" [cost]="course.cost" [duration]="course.duration +' weeks'" [instructor]="course.instructor" [type]="course.type"/>
+        <app-course-card (onedit)="showEditForm($event)" [id]="course.id" [name]="course.name" [cost]="course.cost" [duration]="course.duration +' weeks'" [instructor]="course.instructor" [type]="course.type"/>
     }
 
     @if(showModal){
@@ -12,6 +12,12 @@
     </app-modal>
     }
 
+    @if(showEditCourseForm){
+      <app-modal (close)="closeEditForm()">
+       <app-edit-course-form [id]="editCourseId"></app-edit-course-form>
+      </app-modal>
+    }
+     
     <button *addDirective class="addBtn" (click)="openModal()" >+</button>
     </div>
     <!-- <div class="taskbar">
@@ -41,40 +47,46 @@
         </div>
     </div> -->
 
-    <div class="taskbar d-flex flex-wrap justify-content-between align-items-center gap-3 p-3 shadow-sm rounded bg-white mt-4">
-  <!-- Pagination -->
-  <div class="d-flex align-items-center gap-2 pagination">
+    <div class="d-flex flex-wrap align-items-center justify-content-between gap-3 p-3 bg-light border rounded shadow-sm mt-4">
+
+  <!-- Pagination Controls -->
+  <div class="d-flex align-items-center gap-2">
     <button class="btn btn-outline-secondary btn-sm" (click)="moveLeft()">&lt;</button>
-    <span class="fw-semibold px-2">{{ page }}</span>
+    <span class="fw-bold">{{ page }}</span>
     <button class="btn btn-outline-secondary btn-sm" (click)="moveRight()">&gt;</button>
   </div>
 
-  <!-- Limit Selector -->
-  <select class="form-select form-select-sm w-auto" (change)="setLimit($event)">
-    <option value="5">5</option>
-    <option value="10">10</option>
-    <option value="15">15</option>
-  </select>
+  <!-- Limit Select -->
+  <div>
+    <select class="form-select form-select-sm" style="width: auto;" (change)="setLimit($event)">
+      <option value="5">5</option>
+      <option value="10">10</option>
+      <option value="15">15</option>
+    </select>
+  </div>
 
-  <!-- Filter Selector -->
-  <select class="form-select form-select-sm w-auto" (change)="setFilter($event)">
-    <option value="course">Course</option>
-    <option value="instructor">Instructor</option>
-  </select>
+  <!-- Filter Select -->
+  <div>
+    <select class="form-select form-select-sm" style="width: auto;" (change)="setFilter($event)">
+      <option value="course">Student</option>
+      <option value="instructor">Instructor</option>
+    </select>
+  </div>
 
-  <!-- Search -->
-  <div class="input-group input-group-sm searchbar w-auto">
+  <!-- Search Bar -->
+  <div class="input-group input-group-sm" style="width: 200px;">
     <input
       type="text"
       class="form-control"
-      [formControl]="searchElement"
       placeholder="Search..."
       (change)="search($event)"
+      [formControl]="searchElement"
     />
     <button class="btn btn-outline-secondary" type="button">
-      <img src="https://img.icons8.com/ios7/600/search.png" alt="Search" width="16" height="16" />
+      <img src="https://img.icons8.com/ios7/600/search.png" alt="Search" style="width: 16px; height: 16px;" />
     </button>
   </div>
+
 </div>
 </div>
 

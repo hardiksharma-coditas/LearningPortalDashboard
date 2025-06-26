@@ -1,0 +1,11 @@
+button {
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  background: none;
+  border: thin solid black;
+  transition: 0.5s;
+}
+button:hover {
+  background-color: black;
+  color: white;
+}/*# sourceMappingURL=custom-button.css.map */

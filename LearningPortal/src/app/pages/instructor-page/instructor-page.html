@@ -1,13 +1,32 @@
 <div class="instructorPageContainer">
     <app-header  name="Hardik" email="hardik" role="Instructor"></app-header>
      <main>
-        <nav>
+        <!-- <nav>
             <p routerLink="courses" routerLinkActive="active">Courses</p>
             <p routerLink="students" routerLinkActive="active">Students</p>
             <p routerLink="ratings" routerLinkActive="active">Ratings</p>
-        </nav> 
-        <div class="outlet">
-            <router-outlet></router-outlet>
-        </div>
+        </nav>  -->
+
+        <div class="d-flex">
+    <!-- Sidebar -->
+    <nav class="sidebar bg-light p-3 shadow-sm">
+      <p
+        class="nav-link"
+        routerLink="courses"
+        routerLinkActive="active"
+        [routerLinkActiveOptions]="{ exact: true }"
+      >
+        📚 Courses
+      </p>
+      <p class="nav-link" routerLink="students" routerLinkActive="active">👤 Students</p>
+      <p class="nav-link" routerLink="ratings" routerLinkActive="active">📊 Ratings</p>
+    </nav>
+
+    <!-- Content Area -->
+    <div class="outlet flex-grow-1 p-4">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
      </main>
 </div>
+

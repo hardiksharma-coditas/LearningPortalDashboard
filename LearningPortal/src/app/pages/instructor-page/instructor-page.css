@@ -1,0 +1,13 @@
+.instructorPageContainer {
+  min-height: 100vh;
+}
+.instructorPageContainer .sidebar {
+  min-height: 100vh;
+}
+.instructorPageContainer .sidebar .nav-link {
+  padding: 1rem;
+}
+.instructorPageContainer .sidebar .nav-link.active {
+  border: 2px solid royalblue;
+  border-radius: 10px;
+}/*# sourceMappingURL=instructor-page.css.map */

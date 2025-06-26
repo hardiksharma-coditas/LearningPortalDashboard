@@ -16,9 +16,9 @@
 
 <!-- course-card.component.html -->
 <div class="courseCard card courseCardContainer shadow-sm border-0 overflow-hidden">
-  <div class="row g-0">
+  <div class="col g-0">
     <!-- Image -->
-    <div class="col-md-5">
+    <div class="col-md-12">
       <img
         src="https://foundr.com/wp-content/uploads/2023/04/How-to-create-an-online-course.jpg"
         class="img-fluid h-100 object-fit-cover"
@@ -32,7 +32,7 @@
         <h4 class="mb-1">{{ name() }}</h4>
         <p class="mb-1 text-muted">By - {{ instructor() }}</p>
         <p class="badge bg-info text-dark text-uppercase">{{ type() }}</p>
-        <div *ngIf="type() === 'paid'">
+        <div [class]="type()=='paid'?'paid':'hide'">
           <p class="mb-1">Cost: ₹{{ cost() }}</p>
         </div>
         <p class="mb-1">Duration: {{ duration() }}</p>
@@ -43,4 +43,14 @@
       </div>
     </div>
   </div>
+
+  <div class="buttons" *appEditDeleteCoursePermit>
+   <button class="editBtn" (click)="editUser(id())">
+    <img src="https://logowik.com/content/uploads/images/888_edit.jpg" alt="">
+   </button>
+
+   <button class="deleteBtn" (click)="deleteUser(id())">
+    <img src="https://thumbs.dreamstime.com/b/trash-bin-line-icon-outline-vector-sign-linear-style-pictogram-isolated-white-delete-symbol-logo-illustration-editable-stroke-95235792.jpg" alt="">
+   </button>
+   </div>
 </div>

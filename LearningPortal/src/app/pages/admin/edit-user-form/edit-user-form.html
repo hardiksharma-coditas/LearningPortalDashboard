@@ -1,0 +1,39 @@
+<div class="container my-4">
+  <form class="p-4 border rounded shadow-sm bg-light" [formGroup]="editUserForm" (ngSubmit)="editUser()">
+
+    <!-- Name Field -->
+    <div class="mb-3">
+      <label for="name" class="form-label">Name:</label>
+      <app-input type="text" placeholder="John Doe" id="username" formControlName="name"/>
+      <p class="error text-danger small mt-1 mb-0">{{ validateUserForm('name') }}</p>
+    </div>
+
+    <!-- Email Field -->
+    <div class="mb-3">
+      <label for="email" class="form-label">Email:</label>
+      <app-input type="email" placeholder="johndoe@gmail.com" id="email" formControlName="email" />
+      <p class="error text-danger small mt-1 mb-0">{{ validateUserForm('email') }}</p>
+    </div>
+
+     <div class="mb-3">
+      <label for="password" class="form-label">Password:</label>
+      <app-input type="password" id="password" formControlName="password" />
+      <p class="error text-danger small mt-1 mb-0">{{ validateUserForm('password') }}</p>
+    </div>
+
+    <!-- Role Select -->
+    <div class="mb-3">
+      <label for="role" class="form-label">Role:</label>
+      <select id="role" class="form-select" formControlName="role">
+        <option value="admin">Admin</option>
+        <option value="instructor">Instructor</option>
+        <option value="student">Student</option>
+      </select>
+      <p class="error text-danger small mt-1 mb-0">{{ validateUserForm('role') }}</p>
+    </div>
+
+    <!-- Submit Button -->
+    <app-custom-button label="Edit User" class="btn mt-2" />
+
+  </form>
+</div>

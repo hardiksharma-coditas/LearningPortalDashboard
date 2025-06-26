@@ -1,0 +1,37 @@
+.adminContainer {
+  min-height: 100vh;
+}
+.adminContainer main {
+  display: flex;
+}
+.adminContainer main nav {
+  min-height: 90vh;
+  width: 150px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-right: thin solid black;
+}
+.adminContainer main nav p {
+  padding: 1rem 1.5rem;
+  margin: 5px;
+  width: 100%;
+}
+.adminContainer main nav .active {
+  border: 2px solid black;
+  border-radius: 10px;
+}
+.adminContainer main nav .nav-link {
+  padding: 10rem;
+}
+.adminContainer main .outlet {
+  width: 100%;
+}
+.adminContainer .active {
+  border: 2px solid royalblue;
+  border-radius: 10px;
+}
+.adminContainer .nav-link {
+  padding: 1rem;
+}/*# sourceMappingURL=admin-page.css.map */

@@ -1,4 +1,4 @@
-<div class="userCard">
+<!-- <div class="userCard">
     <div class="image">
         <img src="https://wac-cdn.atlassian.com/dam/jcr:ba03a215-2f45-40f5-8540-b2015223c918/Max-R_Headshot%20(1).jpg?cdnVersion=2801" alt="">
     </div>
@@ -7,4 +7,33 @@
         <p>Role : {{role()}}</p>
         <p>Email :{{email()}}</p>
     </div>
+</div> -->
+
+<div class="card d-flex flex-row align-items-center p-3 shadow-sm rounded mb-3" style="max-width: 500px;">
+  
+  <!-- Profile Image -->
+  <div class="me-3">
+    <img src="https://wac-cdn.atlassian.com/dam/jcr:ba03a215-2f45-40f5-8540-b2015223c918/Max-R_Headshot%20(1).jpg?cdnVersion=2801"
+         alt="User Image"
+         class="rounded-circle"
+         style="width: 80px; height: 80px; object-fit: cover;" />
+  </div>
+
+  <!-- User Info -->
+  <div>
+    <p class="mb-1"><strong>Name:</strong> {{ name() }}</p>
+    <p class="mb-1"><strong>Role:</strong> {{ role() }}</p>
+    <p class="mb-0"><strong>Email:</strong> {{ email() }}</p>
+  </div>
+
+  <div class="buttons" *appEditDeletepermitAdmin>
+   <button class="editBtn" (click)="editUser(id())">
+    <img src="https://logowik.com/content/uploads/images/888_edit.jpg" alt="">
+   </button>
+
+   <button class="deleteBtn" (click)="deleteUser(id())">
+    <img src="https://thumbs.dreamstime.com/b/trash-bin-line-icon-outline-vector-sign-linear-style-pictogram-isolated-white-delete-symbol-logo-illustration-editable-stroke-95235792.jpg" alt="">
+   </button>
+   </div>
+
 </div>

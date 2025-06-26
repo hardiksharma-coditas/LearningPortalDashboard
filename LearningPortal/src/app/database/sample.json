@@ -1,17 +1,99 @@
 {
   "posts": [
-    { "id": "1", "title": "a title", "views": 100 },
-    { "id": "2", "title": "another title", "views": 200 }
+    {
+      "id": "1",
+      "title": "a title",
+      "views": 100
+    },
+    {
+      "id": "2",
+      "title": "another title",
+      "views": 200
+    }
   ],
-  "users":[
-    {"id":"1","name":"Admin","email":"admin@gmail.com","password":"admin1234","role":"admin","token":"admin-token-1", "status":"active"},
-    {"id":"2","name":"Instructor","email":"instructor@gmail.com","password":"instructor1234","role":"instructor","token":"user-token-1", "status":"left"},
-    {"id":"3","name":"Student","email":"student@gmail.com","password":"student1234","role":"student","token":"studet-token-1", "status":"active"}
+  "users": [
+    {
+      "id": "1",
+      "name": "Admin",
+      "email": "admin@gmail.com",
+      "password": "admin1234",
+      "role": "admin",
+      "token": "admin-token-1",
+      "status": "active"
+    },
+    {
+      "id": "2",
+      "name": "Instructor",
+      "email": "instructor@gmail.com",
+      "password": "instructor1234",
+      "role": "instructor",
+      "token": "user-token-1",
+      "status": "left"
+    },
+    {
+      "id": "3",
+      "name": "Student",
+      "email": "student@gmail.com",
+      "password": "student1234",
+      "role": "student",
+      "token": "studet-token-1",
+      "status": "active"
+    },
+    {
+      "id": "fa19",
+      "name": "test1",
+      "email": "test1@gmail.com",
+      "password": "test1",
+      "role": "student"
+    }
   ],
-  "courses":[
-    {"id":"1","name":"Maths NCERT","type":"paid", "cost":"1000","instructor":"Jack Sir","duration":"8"},
-    {"id":"2","name":"Physics Expert","type":"paid","cost":"2000","instructor":"Phobos Sir","duration":"2"},
-    {"id":"3","name":"English Communication","type":"free","instructor":"Daimos Sir","duration":"5"},
-    {"id":"4","name":"Japanese Hiragana","type":"free","instructor":"Taurus Sir","duration":"12"}
+  "courses": [
+    {
+      "id": "1",
+      "name": "Maths NCERT",
+      "type": "paid",
+      "cost": "1000",
+      "instructor": "Jack Sir",
+      "duration": "8"
+    },
+    {
+      "id": "2",
+      "name": "Physics Expert",
+      "type": "paid",
+      "cost": "2000",
+      "instructor": "Phobos Sir",
+      "duration": "2"
+    },
+    {
+      "id": "3",
+      "name": "English Communication",
+      "type": "free",
+      "instructor": "Daimos Sir",
+      "duration": "5"
+    },
+    {
+      "id": "4",
+      "name": "Japanese Hiragana",
+      "type": "free",
+      "instructor": "Taurus Sir",
+      "duration": "12"
+    },
+    {
+      "id": "02fc",
+      "name": "Vedic Maths",
+      "instructorname": "Genius sir",
+      "type": "paid",
+      "duration": "15",
+      "cost": "1999",
+      "instructor": "Genius sir"
+    },
+    {
+      "id": "1f2d",
+      "name": "Spoken English",
+      "instructor": "Jasper sir",
+      "type": "free",
+      "duration": "5",
+      "cost": ""
+    }
   ]
 }

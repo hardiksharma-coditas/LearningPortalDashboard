@@ -4,12 +4,24 @@
    <!-- <app-user-card name="Hardik" email="hardik" role="admin"></app-user-card> -->
 
    @for(user of activeusers;track $index){
-   <app-user-card [name]="user.name" [email]="user.email" [role]="user.role"></app-user-card>
+   <app-user-card (onedit)="openEditForm($event)" [id]="user.id" [name]="user.name" [email]="user.email" [role]="user.role"></app-user-card>
    } 
-   <button>+</button>
+  <button class="addUserBtn" (click)="openForm()">+</button>
+
+  @if(showForm){
+    <app-modal (close)="closeForm()">
+<app-add-user-form></app-add-user-form>
+    </app-modal>
+  }
+
+  @if(editForm){
+    <app-modal (close)="closeEditForm()">
+      <app-edit-user-form [id]="editUserId"></app-edit-user-form>
+    </app-modal>
+  }
     </div>
 
-     <div class="taskbar">
+     <!-- <div class="taskbar">
      
         <div class="pagination">
             <button (click)="moveLeft()"><</button>
@@ -34,6 +46,48 @@
                 <img src="https://img.icons8.com/ios7/600/search.png" alt="">
             </button>
         </div>
-    </div>
+    </div> -->
+
+    <div class="d-flex flex-wrap align-items-center justify-content-between gap-3 p-3 bg-light border rounded shadow-sm mt-4">
+
+  <!-- Pagination Controls -->
+  <div class="d-flex align-items-center gap-2">
+    <button class="btn btn-outline-secondary btn-sm" (click)="moveLeft()">&lt;</button>
+    <span class="fw-bold">{{ page }}</span>
+    <button class="btn btn-outline-secondary btn-sm" (click)="moveRight()">&gt;</button>
+  </div>
+
+  <!-- Limit Select -->
+  <div>
+    <select class="form-select form-select-sm" style="width: auto;" (change)="setLimit($event)">
+      <option value="5">5</option>
+      <option value="10">10</option>
+      <option value="15">15</option>
+    </select>
+  </div>
+
+  <!-- Filter Select -->
+  <div>
+    <select class="form-select form-select-sm" style="width: auto;" (change)="setFilter($event)">
+      <option value="course">Student</option>
+      <option value="instructor">Instructor</option>
+    </select>
+  </div>
+
+  <!-- Search Bar -->
+  <div class="input-group input-group-sm" style="width: 200px;">
+    <input
+      type="text"
+      class="form-control"
+      placeholder="Search..."
+      (change)="search($event)"
+      [formControl]="searchElement"
+    />
+    <button class="btn btn-outline-secondary" type="button">
+      <img src="https://img.icons8.com/ios7/600/search.png" alt="Search" style="width: 16px; height: 16px;" />
+    </button>
+  </div>
+
+</div>
     
 </div>

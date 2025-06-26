@@ -1,0 +1,16 @@
+.modalContainer {
+  position: fixed;
+  border-radius: 10px;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.795);
+  display: grid;
+  place-items: center;
+  z-index: 99;
+}
+.modalContainer .contentBox {
+  padding: 1rem;
+  background-color: aliceblue;
+}/*# sourceMappingURL=modal.css.map */

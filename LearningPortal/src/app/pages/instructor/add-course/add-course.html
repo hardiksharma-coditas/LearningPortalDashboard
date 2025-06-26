@@ -1,4 +1,4 @@
-<div class="addCourse">
+<!-- <div class="addCourse">
     <form action="" [formGroup]="addCourseForm">
         <div>
             <label for="courseName">Course Name:</label>
@@ -31,4 +31,56 @@
         </div>
         <app-custom-button label="Add" (click)="addCourse()" />
     </form>
+</div> -->
+
+<div class="addCourseForm container my-4"
+     style="max-height: 70vh; overflow-y: auto;">
+  <form [formGroup]="addCourseForm" (ngSubmit)="addCourse()"
+        class="form p-4 bg-light border rounded shadow-sm">
+    
+    <!-- Form Content -->
+    <!-- Course Name -->
+    <div class="mb-3">
+      <label for="name" class="form-label">Course Name:</label>
+      <app-input type="text" formControlName="name" placeholder="English" class="form-control" />
+    </div>
+
+    <!-- Instructor Name -->
+    <div class="mb-3">
+      <label for="instructor" class="form-label">Instructor Name:</label>
+      <app-input type="text" formControlName="instructor" placeholder="Pluto Sir" class="form-control" />
+    </div>
+
+    <!-- Type (Radio Buttons) -->
+    <div class="mb-3">
+      <label class="form-label">Type:</label>
+      <div class="form-check">
+        <input type="radio" formControlName="type" value="free" id="typeFree" />
+        <label for="typeFree" class="form-check-label">Free</label>
+      </div>
+      <div class="form-check">
+        <input type="radio" formControlName="type" value="paid" id="typePaid" />
+        <label for="typePaid" class="form-check-label">Paid</label>
+      </div>
+    </div>
+
+    <div class="mb-3">
+      <label for="cost" class="form-label">Cost:</label>
+      <app-input type="text" formControlName="cost" placeholder="2000" class="form-control" />
+    </div>
+
+    <!-- Duration -->
+    <div class="mb-3">
+      <label for="duration" class="form-label">Duration:</label>
+      <select formControlName="duration" class="form-select" id="duration">
+        <option value="5">5 Weeks</option>
+        <option value="10">10 Weeks</option>
+        <option value="15">15 Weeks</option>
+      </select>
+    </div>
+
+    <!-- Submit Button -->
+    <app-custom-button label="Add" class="btn mt-3" />
+
+  </form>
 </div>

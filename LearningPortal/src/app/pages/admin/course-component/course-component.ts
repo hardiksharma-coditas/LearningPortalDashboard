@@ -7,10 +7,11 @@ import { debounceTime } from 'rxjs';
 import { Modal } from '../../../shared/modal/modal';
 import { AddCourse } from "../../instructor/add-course/add-course";
 import { AddDirective } from '../../../directives/add-directive';
+import { EditCourseForm } from "../../instructor/edit-course-form/edit-course-form";
 
 @Component({
   selector: 'app-course-component',
-  imports: [CourseCard, ReactiveFormsModule, Modal, AddCourse,AddDirective],
+  imports: [CourseCard, ReactiveFormsModule, Modal, AddCourse, AddDirective, EditCourseForm],
   templateUrl: './course-component.html',
   styleUrl: './course-component.scss'
 })
@@ -24,6 +25,8 @@ export class CourseComponent implements OnInit {
   filteredCourses:Course[]=[]
   showModal:boolean=false
   role:string=''
+  showEditCourseForm:boolean=false
+  editCourseId:string=''
 
   searchElement=new FormControl('')
 
@@ -66,6 +69,15 @@ export class CourseComponent implements OnInit {
 
      this.getCourses(this.page,this.limit)
 
+  }
+
+  showEditForm(e:string){
+  this.showEditCourseForm=true
+  this.editCourseId=e
+  }
+
+  closeEditForm(){
+    this.showEditCourseForm=false
   }
 
   search(e:Event){

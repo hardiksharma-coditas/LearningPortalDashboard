@@ -1,0 +1,14 @@
+.loginFormContainer {
+  background: url("https://www.crmjetty.com/wp-content/uploads/2024/06/image1.png") no-repeat center center;
+  background-size: cover;
+  margin: 0;
+}
+.loginFormContainer .form {
+  border-radius: 10px;
+  background-color: rgba(255, 255, 255, 0.822);
+  color: black;
+  box-shadow: 0px 0px 6px 2px rgba(123, 123, 123, 0.799) !important;
+}
+.loginFormContainer .form .error {
+  font-size: 18px;
+}/*# sourceMappingURL=login.css.map */

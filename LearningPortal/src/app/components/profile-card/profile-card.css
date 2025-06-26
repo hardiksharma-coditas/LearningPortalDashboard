@@ -1,0 +1,28 @@
+.profileCard {
+  padding: 1rem;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  gap: 10px;
+  width: 500px;
+}
+.profileCard .image img {
+  width: 200px;
+}
+.profileCard .info {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: center;
+  width: 100%;
+}
+.profileCard .info .heading {
+  padding: 1rem;
+}
+.profileCard .info .content > p {
+  margin: 1rem;
+}
+.profileCard .info .button {
+  padding: 1rem;
+}/*# sourceMappingURL=profile-card.css.map */
