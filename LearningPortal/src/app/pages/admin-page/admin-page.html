@@ -1,5 +1,5 @@
-<div class="adminContainer">
-    <app-header></app-header>
+<!-- <div class="adminContainer">
+    <app-header name="Hardik" email="hardik" role="Admin"></app-header>
      <main>
         <nav>
             <p routerLink="courses" routerLinkActive="active">Courses</p>
@@ -10,4 +10,32 @@
             <router-outlet></router-outlet>
         </div>
      </main>
+</div> -->
+
+<!-- admin.component.html -->
+<div class="adminContainer">
+  <!-- Header -->
+  <app-header [name]="'Hardik'" [email]="'hardik'" [role]="'Admin'"></app-header>
+
+  <!-- Layout: Sidebar + Content -->
+  <div class="d-flex">
+    <!-- Sidebar -->
+    <nav class="sidebar bg-light p-3 shadow-sm">
+      <p
+        class="nav-link"
+        routerLink="courses"
+        routerLinkActive="active"
+        [routerLinkActiveOptions]="{ exact: true }"
+      >
+        📚 Courses
+      </p>
+      <p class="nav-link" routerLink="activeusers" routerLinkActive="active">👤 Active Users</p>
+      <p class="nav-link" routerLink="stats" routerLinkActive="active">📊 Stats</p>
+    </nav>
+
+    <!-- Content Area -->
+    <div class="outlet flex-grow-1 p-4">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
 </div>

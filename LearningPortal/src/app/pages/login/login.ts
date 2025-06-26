@@ -4,7 +4,7 @@ import { CustomButton } from "../../shared/custom-button/custom-button";
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { AuthService } from '../../services/authentication/auth-service';
 import { User } from '../../types/user';
-import { ToastService } from '../../services/toast/toast-service';
+// import { ToastService } from '../../services/toast/toast-service';
 import { validateFunc } from '../../validator';
 import { Router } from '@angular/router';
 import { Modal } from "../../shared/modal/modal";
@@ -19,7 +19,7 @@ export class Login {
 
   router = inject(Router)
   loginService = inject(AuthService)
-  toastService = inject(ToastService)
+  // toastService = inject(ToastService)
 
   loginForm: FormGroup = new FormGroup({
     email: new FormControl('', [Validators.required, Validators.email]),
@@ -31,8 +31,38 @@ export class Login {
     console.log(this.loginForm.value)
 
     if (this.loginForm.valid) {
-      this.loginService.authenticateUser(this.loginForm).subscribe({
+      // this.loginService.authenticateUser(this.loginForm).subscribe({
+      //   next: (user: User[]) => {
+      //     const token = user[0].token;
+      //     const role = user[0].role;
+      //     //  console.log(user)
+      //     //  console.log(token,role)
+
+      //     localStorage.setItem('token', token)
+      //     localStorage.setItem('role', role)
+
+      //     if (role === 'admin') {
+      //       this.router.navigateByUrl('/admin')
+      //     }
+      //     else if (role === 'instructor') {
+      //       this.router.navigateByUrl('/instructor')
+      //     }
+      //     else if (role === 'student') {
+      //       this.router.navigateByUrl('/student')
+      //     }
+
+      //     this.toastService.addMessage({ message: "Logged In Successfully!", duration: 1500, type: 'success' })
+      //   },
+      //   error: (error) => {
+      //     this.toastService.addMessage({ message: `There is an error: ${error}`, duration: 1500, type: 'error' })
+      //   }
+      // })
+
+      const user:any=this.loginService.authenticateUser(this.loginForm)
+
+      user.subscribe({
         next: (user: User[]) => {
+          console.log(user,"USER")
           const token = user[0].token;
           const role = user[0].role;
           //  console.log(user)
@@ -51,12 +81,13 @@ export class Login {
             this.router.navigateByUrl('/student')
           }
 
-          this.toastService.addMessage({ message: "Logged In Successfully!", duration: 1500, type: 'success' })
+          // this.toastService.addMessage({ message: "Logged In Successfully!", duration: 1500, type: 'success' })
         },
-        error: (error) => {
-          this.toastService.addMessage({ message: `There is an error: ${error}`, duration: 1500, type: 'error' })
+        error: (error:any) => {
+          // this.toastService.addMessage({ message: `There is an error: ${error}`, duration: 1500, type: 'error' })
         }
       })
+     
     }
     else {
       alert("This form is invalid")

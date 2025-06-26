@@ -1,9 +1,10 @@
 import { Component, input } from '@angular/core';
 import { CustomButton } from "../../shared/custom-button/custom-button";
+import { PurchaseButtonPermit } from '../../directives/purchase-button-permit';
 
 @Component({
   selector: 'app-course-card',
-  imports: [CustomButton],
+  imports: [CustomButton,PurchaseButtonPermit],
   templateUrl: './course-card.html',
   styleUrl: './course-card.scss'
 })

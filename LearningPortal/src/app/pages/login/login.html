@@ -1,8 +1,8 @@
-<div class="loginContainer">
+<!-- <div  class="container d-flex justify-content-center align-items-center min-vh-100">
    <form action="" [formGroup]="loginForm" (ngSubmit)="onLogin()">
     <h3>Login Page</h3>
     <div>
-        <label for="email">Email :</label>
+        <label for="email" class="form-label">Email :</label>
         <app-input class="input" type="email" placeholder="Johndoe@gmail.com" formControlName="email"/>
         <p class="error">{{validateForm('email')}}</p>
     </div>
@@ -16,4 +16,47 @@
     </div>
    </form>
 
+</div> -->
+
+
+<!-- Bootstrap -->
+
+<div class="loginFormContainer container d-flex justify-content-center align-items-center min-vh-100 bg-light">
+  <form
+    class="form card shadow p-4"
+    style="width: 100%; max-width: 400px"
+    [formGroup]="loginForm"
+    (ngSubmit)="onLogin()"
+  >
+    <h3 class="text-center mb-4">Login Page</h3>
+
+    <div class="mb-3">
+      <label for="email" class="form-label">Email:</label>
+      <app-input
+        class="form-control"
+        type="email"
+        placeholder="johndoe@gmail.com"
+        formControlName="email"
+      ></app-input>
+      <p class="error text-danger small mt-1 mb-0">{{ validateForm('email') }}</p>
+    </div>
+
+    <div class="mb-3">
+      <label for="password" class="form-label">Password:</label>
+      <app-input
+        class="form-control"
+        type="password"
+        placeholder="Enter password"
+        formControlName="password"
+      ></app-input>
+      <p class="error text-danger small mt-1 mb-0">{{ validateForm('password') }}</p>
+    </div>
+
+    <div class="d-grid">
+      <app-custom-button
+        class="btn"
+        label="Login"
+      ></app-custom-button>
+    </div>
+  </form>
 </div>

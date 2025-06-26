@@ -1,10 +1,14 @@
-import { Component, inject } from '@angular/core';
+import { Component, inject, input } from '@angular/core';
 import { Router } from '@angular/router';
 import { CustomButton } from "../../shared/custom-button/custom-button";
+import { Modal } from "../../shared/modal/modal";
+import { ProfileCard } from "../profile-card/profile-card";
+import { User } from '../../types/user';
+
 
 @Component({
   selector: 'app-header',
-  imports: [CustomButton],
+  imports: [CustomButton, Modal, ProfileCard],
   templateUrl: './header.html',
   styleUrl: './header.scss'
 })
@@ -12,10 +16,17 @@ export class Header {
 
   router=inject(Router)
 
-  logout(){
-    localStorage.removeItem('token')
-    localStorage.removeItem('roke')
+  name=input.required<string>()
+  role=input.required<string>()
+  email=input.required<string>()
 
-    this.router.navigateByUrl('/login')
+  showProfile:boolean=false
+
+  openProfile(){
+    this.showProfile=true
+  }
+
+  closeProfile(){
+    this.showProfile=false
   }
 }

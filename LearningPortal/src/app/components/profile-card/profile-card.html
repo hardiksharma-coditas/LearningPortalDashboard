@@ -1,3 +1,15 @@
 <div class="profileCard">
-    
+    <div class="image">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRc1ZexCQhnwfh6ElVtENcnonZCAecpN5_0pVGdQMp5mFwwuVgtHkRkIvFqRp7jVA8RD3E&usqp=CAU" alt="">
+    </div>
+    <div class="info">
+     <div class="heading">
+        <h3>{{name()}}</h3>
+     </div>
+     <div class="content">
+        <p>Role :{{role()}}</p>
+        <p>Email :{{email()}}</p>
+     </div>
+     <app-custom-button class="button" label="Log Out" (click)="logout()" />
+    </div>
 </div>

@@ -10,7 +10,7 @@ import { AddDirective } from '../../../directives/add-directive';
 
 @Component({
   selector: 'app-course-component',
-  imports: [CourseCard, ReactiveFormsModule, Modal, AddCourse],
+  imports: [CourseCard, ReactiveFormsModule, Modal, AddCourse,AddDirective],
   templateUrl: './course-component.html',
   styleUrl: './course-component.scss'
 })
@@ -23,6 +23,7 @@ export class CourseComponent implements OnInit {
   filter:string=''
   filteredCourses:Course[]=[]
   showModal:boolean=false
+  role:string=''
 
   searchElement=new FormControl('')
 
@@ -30,6 +31,7 @@ export class CourseComponent implements OnInit {
 
   ngOnInit(): void {
     this.getCourses(this.page, this.limit);
+    this.role!=localStorage.getItem('role')
 
     this.searchElement.valueChanges.pipe(
       debounceTime(500)

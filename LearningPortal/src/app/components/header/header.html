@@ -1,8 +1,38 @@
-<div class="headerContainer">
+<!-- <div class="headerContainer">
     <h2>Learning Portal</h2>
 
-    <div class="profile">
-        <img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png" alt="">
-        <app-custom-button label="Logout"  (click)="logout()"/>
+    <div class="profile" (click)="openProfile()">
+        <img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png" alt=""> -->
+        <!-- <app-custom-button label="Logout"  (click)="logout()"/> -->
+    <!-- </div>
+
+    @if(showProfile){
+        <app-modal (close)="closeProfile()">
+            <app-profile-card [name]="name()" [email]="email()" [role]="role()" ></app-profile-card>
+        </app-modal>
+    }
+
+
+</div> -->
+
+<header class="d-flex justify-content-between align-items-center px-4 py-2 shadow bg-white border-bottom">
+  <h2 class="m-0 text-primary fw-bold">Learning Portal</h2>
+
+  <div class="position-relative">
+    <div class="d-flex align-items-center gap-2 cursor-pointer" (click)="openProfile()">
+      <img
+        src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png"
+        alt="Profile"
+        class="rounded-circle"
+        width="40"
+        height="40"
+      />
     </div>
-</div>
+
+    @if (showProfile) {
+      <app-modal (close)="closeProfile()">
+        <app-profile-card [name]="name()" [email]="email()" [role]="role()"></app-profile-card>
+      </app-modal>
+    }
+  </div>
+</header>

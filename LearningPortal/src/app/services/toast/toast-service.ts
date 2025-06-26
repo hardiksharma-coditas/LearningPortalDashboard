@@ -1,39 +1,25 @@
-import { Injectable } from '@angular/core';
-import { Toast } from '../../types/toast';
+// import { Injectable, signal, TemplateRef } from '@angular/core';
 
-@Injectable({
-  providedIn: 'root'
-})
-export class ToastService {
+// export interface Toast {
+// 	template: TemplateRef<any>;
+// 	classname?: string;
+// 	delay?: number;
+// }
 
-  constructor() { }
+// @Injectable({ providedIn: 'root' })
+// export class ToastService {
+// 	private readonly _toasts = signal<Toast[]>([]);
+// 	readonly toasts = this._toasts.asReadonly();
 
-  toasts:Toast[]=[]
-  delay:number=0
+// 	show(toast: Toast) {
+// 		this._toasts.update((toasts) => [...toasts, toast]);
+// 	}
 
-  addMessage(msg:Toast){
-    // if(this.toasts[0]){
+// 	remove(toast: Toast) {
+// 		this._toasts.update((toasts) => toasts.filter((t) => t !== toast));
+// 	}
 
-    //   setTimeout(()=>{
-    //     this.toasts.push(msg)
-
-    //     setTimeout(()=>this.toasts.pop(),msg.duration)
-    //   },this.delay+1000)
-    // }
-    // else{
-    // this.toasts.push(msg)
-    // this.delay=msg.duration
-
-    // setTimeout(()=>this.toasts.pop(),this.delay)
-    // }
-
-    this.toasts.push(msg)
-    this.delay=msg.duration
-
-    setTimeout(()=>this.toasts.pop(),this.delay)
-  }
-
-  getToasts(){
-    return this.toasts
-  }
-}
+// 	clear() {
+// 		this._toasts.set([]);
+// 	}
+// }

@@ -1,5 +1,6 @@
 .modalContainer{
     position: fixed;
+    border-radius: 10px;
     top: 0;
     bottom: 0;
     left: 0;
@@ -8,7 +9,7 @@
 
     display: grid;
     place-items: center;
-     z-index: 2;
+     z-index: 99;
     .contentBox{
         padding: 1rem;
         background-color: aliceblue;

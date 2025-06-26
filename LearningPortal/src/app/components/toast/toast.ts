@@ -1,21 +1,30 @@
-import { Component, inject, OnInit } from '@angular/core';
-import { ToastService } from '../../services/toast/toast-service';
-import { Toast } from '../../types/toast';
+// import { Component, inject, OnDestroy, TemplateRef } from '@angular/core';
+// import { NgbTooltipModule } from '@ng-bootstrap/ng-bootstrap';
 
-@Component({
-  selector: 'app-toast',
-  imports: [],
-  templateUrl: './toast.html',
-  styleUrl: './toast.scss'
-})
-export class ToastComponent implements OnInit{
-   
-  toasts:Toast[]=[]
-  toastService=inject(ToastService)
+// import { ToastService } from './toast-service';
+// import { ToastsContainer } from './toasts-container.component';
 
-  ngOnInit(): void {
-    this.toasts=this.toastService.getToasts()
-    console.log(this.toasts)
-  }
+// @Component({
+// 	selector: 'ngbd-toast-global',
+// 	imports: [NgbTooltipModule, ToastsContainer],
+// 	templateUrl: './toast-global.component.html',
+// })
+// export class NgbdToastGlobal implements OnDestroy {
+// 	toastService = inject(ToastService);
 
-}
+// 	showStandard(template: TemplateRef<any>) {
+// 		this.toastService.show({ template });
+// 	}
+
+// 	showSuccess(template: TemplateRef<any>) {
+// 		this.toastService.show({ template, classname: 'bg-success text-light', delay: 10000 });
+// 	}
+
+// 	showDanger(template: TemplateRef<any>) {
+// 		this.toastService.show({ template, classname: 'bg-danger text-light', delay: 15000 });
+// 	}
+
+// 	ngOnDestroy(): void {
+// 		this.toastService.clear();
+// 	}
+// }
