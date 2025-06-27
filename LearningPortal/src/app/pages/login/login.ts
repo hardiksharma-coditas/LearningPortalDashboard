@@ -8,6 +8,7 @@ import { User } from '../../types/user';
 import { validateFunc } from '../../validator';
 import { Router } from '@angular/router';
 import { Modal } from "../../shared/modal/modal";
+import { ToastService } from '../../services/toast/toast-service';
 
 @Component({
   selector: 'app-login',
@@ -20,6 +21,8 @@ export class Login {
   router = inject(Router)
   loginService = inject(AuthService)
   // toastService = inject(ToastService)
+
+  toastService=inject(ToastService)
 
   loginForm: FormGroup = new FormGroup({
     email: new FormControl('', [Validators.required, Validators.email]),
@@ -70,6 +73,8 @@ export class Login {
 
           localStorage.setItem('token', token)
           localStorage.setItem('role', role)
+
+          this.toastService.addToast({message:"Successfully logged in!",duration:3000,type:'success'})
 
           if (role === 'admin') {
             this.router.navigateByUrl('/admin')
