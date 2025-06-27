@@ -1,1 +1,26 @@
-<p>student-page works!</p>
+<div class="studentContainer">
+    <app-header name="Hardik" email="hardik@gmail.com" role="Student"></app-header>
+
+    <div class="d-flex">
+    <nav class="sidebar bg-light p-3 shadow-sm">
+      <p
+        class="nav-link"
+        routerLink="courses"
+        routerLinkActive="active"
+        [routerLinkActiveOptions]="{ exact: true }"
+      >
+        📚 Courses
+      </p>
+      <p class="nav-link" routerLink="mycourses" routerLinkActive="active">👤 My Courses</p>
+      <p class="nav-link" routerLink="users" routerLinkActive="active">📊 users</p>
+    </nav>
+
+     <div class="outlet">
+        <router-outlet></router-outlet>
+    </div>
+    </div>
+
+   
+
+    
+</div>

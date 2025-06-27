@@ -15,6 +15,7 @@ const instructorChildren=()=>import('../app/routes/instructor.routes')
 
 //studentPage
 const studentPage=()=>import('../app/pages/student-page/student-page').then(c=>c.StudentPage)
+const studentChildren=()=>import('../app/routes/student.routes')
 
 export const routes: Routes = [
     {
@@ -41,6 +42,7 @@ export const routes: Routes = [
     {
         path:'student',
         canActivate:[authGuardGuard],
-        loadComponent:studentPage
+        loadComponent:studentPage,
+        loadChildren:studentChildren
     }
 ];
